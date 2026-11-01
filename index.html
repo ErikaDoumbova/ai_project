@@ -33,9 +33,9 @@
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="container hero__content">
-        <p class="eyebrow">A student explainer · November 2026</p>
+        <p class="eyebrow">A student explainer · 2026</p>
         <h1 class="hero__title" id="hero-title">AI, <em>explained softly</em></h1>
-        <p class="hero__lede">Artificial intelligence is in our phones, classrooms and feeds, yet it is usually explained as either magic or doom. This page tries something softer: plain words, real examples and honest uncertainty.</p>
+        <p class="hero__lede">AI is in our phones, classrooms and feeds, yet it is usually explained as magic or doom. This page tries something softer: plain words, real examples, honest uncertainty.</p>
         <p class="legend" aria-label="How to read the labels on this page">
           <span><span class="badge badge--fact">Fact</span> checked against a linked source</span>
           <span><span class="badge badge--view">My view</span> my interpretation</span>
@@ -51,17 +51,17 @@
         <h2 id="what-title">What is AI, really?</h2>
         <div class="split">
           <div class="prose reveal">
-            <p class="lead">AI is software that <strong>learns from examples</strong> instead of only following rules a programmer wrote by hand.</p>
-            <p><span class="badge badge--fact">Fact</span> The <a href="https://oecd.ai/en/inside-artificial-intelligence">OECD</a> describes an AI system as a machine that works out, from the input it receives, how to produce outputs such as predictions, content, recommendations or decisions.</p>
-            <p>In practice: show a computer millions of examples, let it adjust itself until it spots the patterns, then ask it to guess. A chatbot guesses a likely next word. An <a href="https://www.washingtonpost.com/technology/interactive/2022/ai-image-generator/">image generator</a> starts from random noise and cleans it up, step by step, until it matches your prompt.</p>
-            <p><span class="badge badge--fact">Fact</span> Those examples come from us. Google's C4 dataset, used to train language models, was built from about <a href="https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/">15 million websites</a>, from Wikipedia to personal blogs.</p>
+            <p class="lead">AI is software that <strong>learns from examples</strong> instead of following only hand-written rules.</p>
+            <p><span class="badge badge--fact">Fact</span> The <a href="https://oecd.ai/en/wonk/ai-system-definition-update">OECD</a> describes an AI system as a machine that works out, from its input, how to produce outputs such as predictions, content, recommendations or decisions.</p>
+            <p>In practice, it spots patterns in millions of examples, then guesses: a chatbot predicts a likely next word; an <a href="https://www.washingtonpost.com/technology/interactive/2022/ai-image-generator/">image generator</a> refines random noise into a picture.</p>
+            <p><span class="badge badge--fact">Fact</span> Those examples come from us: Google's C4 training dataset was built from about <a href="https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/">15 million websites</a>.</p>
             <div class="callout">
-              <p><span class="badge badge--view">My view</span> AI does not “understand” the world the way people do. It is brilliant at patterns, which is exactly why it can sound confident and still be wrong.</p>
+              <p><span class="badge badge--view">My view</span> AI does not “understand” like people do. It is brilliant at patterns, which is why it can sound confident and still be wrong.</p>
             </div>
           </div>
           <figure class="diagram reveal">
             <img src="assets/how-ai-learns.svg" width="600" height="420" alt="Diagram of a loop with four steps. 1, Data: examples such as text, images and sounds. 2, Training: the computer tweaks itself to spot patterns. 3, Model: the learned patterns, saved. 4, Output: a guess such as a word, a label or an image. In the middle, people check and correct the output, which feeds back into the data.">
-            <figcaption>How an AI model learns, drawn for this page.</figcaption>
+            <figcaption>How an AI model learns.</figcaption>
           </figure>
         </div>
       </div>
@@ -75,22 +75,22 @@
           <li class="card reveal">
             <span class="card__icon" aria-hidden="true">🧬</span>
             <h3>Science</h3>
-            <p><span class="badge badge--fact">Fact</span> DeepMind's <a href="https://alphafold.ebi.ac.uk/">AlphaFold</a> has predicted the 3D shapes of over 200 million proteins, helping researchers study disease and design medicines. The work shared the <a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">2024 Nobel Prize in Chemistry</a>.</p>
+            <p><span class="badge badge--fact">Fact</span> DeepMind's <a href="https://alphafold.ebi.ac.uk/">AlphaFold</a> has predicted the 3D shapes of over 200 million proteins, helping research into diseases and medicines. It shared the <a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">2024 Nobel Prize in Chemistry</a>.</p>
           </li>
           <li class="card reveal">
             <span class="card__icon" aria-hidden="true">📚</span>
             <h3>Studying</h3>
-            <p><span class="badge badge--view">My view</span> I use AI to quiz myself before exams, get a second explanation of a hard concept and spot gaps in my notes. It is a great study buddy and a bad ghostwriter.</p>
+            <p><span class="badge badge--view">My view</span> I use AI to quiz myself, re-explain hard concepts and find gaps in my notes: a great study buddy, a bad ghostwriter.</p>
           </li>
           <li class="card reveal">
             <span class="card__icon" aria-hidden="true">💼</span>
             <h3>Work</h3>
-            <p><span class="badge badge--view">My view</span> Drafting emails, summarising long reports, translating and writing code all get faster, as long as a person checks the result before it goes out.</p>
+            <p><span class="badge badge--view">My view</span> Drafting, summarising, translating and coding get faster, if a person checks the result.</p>
           </li>
           <li class="card reveal">
             <span class="card__icon" aria-hidden="true">🦻</span>
             <h3>Accessibility</h3>
-            <p><span class="badge badge--view">My view</span> Live captions, voice control and automatic image descriptions can make technology easier to use for people who are deaf, blind or have limited mobility.</p>
+            <p><span class="badge badge--view">My view</span> Live captions, voice control and image descriptions help people who are deaf, blind or have limited mobility.</p>
           </li>
         </ul>
       </div>
@@ -100,6 +100,75 @@
       <div class="container">
         <p class="kicker">03 · the tricky</p>
         <h2 id="risks-title">Where it goes wrong</h2>
+        <ul class="cards" role="list">
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">🙈</span>
+            <h3>Errors</h3>
+            <p><span class="badge badge--fact">Fact</span> Chatbots can invent facts and sources in a confident tone. <a href="https://doi.org/10.6028/NIST.AI.600-1">NIST</a> calls this “confabulation”.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">⚖️</span>
+            <h3>Bias</h3>
+            <p><span class="badge badge--fact">Fact</span> In the <a href="https://proceedings.mlr.press/v81/buolamwini18a.html">Gender Shades</a> study, face-analysis tools misclassified darker-skinned women up to 34.7% of the time, versus 0.8% for lighter-skinned men.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">🔒</span>
+            <h3>Privacy</h3>
+            <p><span class="badge badge--view">My view</span> Training data is scraped at huge scale, so personal posts and photos can end up inside AI without consent.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">🎭</span>
+            <h3>Deepfakes</h3>
+            <p><span class="badge badge--fact">Fact</span> Google told Australia's regulator it received <a href="https://www.reuters.com/technology/cybersecurity/google-reports-scale-complaints-about-ai-deepfake-terrorism-content-australian-2025-03-05/">258 reports</a> of suspected terrorist deepfakes made with its Gemini AI in under a year.</p>
+          </li>
+        </ul>
+
+        <div class="cases">
+          <article class="case reveal">
+            <div class="case__inner">
+              <div class="case__face case__front">
+                <p class="case__tag">Hong Kong · 2024</p>
+                <h3>The video call where everyone was fake</h3>
+                <button class="case__btn" type="button" aria-expanded="false">Open case file</button>
+              </div>
+              <div class="case__face case__back">
+                <p><span class="badge badge--fact">Fact</span> An employee joined a video call with the company's “finance chief” and colleagues. <a href="https://www.scmp.com/news/hong-kong/law-and-crime/article/3250851/everyone-looked-real-multinational-firms-hong-kong-office-loses-hk200-million-after-scammers-stage">All were deepfakes</a>. The employee sent scammers HK$200 million (US$25.6 million).</p>
+                <p><span class="badge badge--view">My view</span> <strong>Lesson:</strong> for money or passwords, double-check through another channel.</p>
+                <button class="case__btn" type="button">Close</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__inner">
+              <div class="case__face case__front">
+                <p class="case__tag">AI agents · July 2026</p>
+                <h3>The agent that left its sandbox</h3>
+                <button class="case__btn" type="button" aria-expanded="false">Open case file</button>
+              </div>
+              <div class="case__face case__back">
+                <p><span class="badge badge--fact">Fact</span> In OpenAI's internal security tests, AI agents with weakened safeguards escaped their sandbox and <a href="https://huggingface.co/blog/security-incident-july-2026">broke into Hugging Face's systems</a>, taking credentials. <a href="https://www.reuters.com/business/its-ai-agent-spent-days-hacking-company-sources-say-openai-did-not-notice-week-2026-07-24/">Reuters</a> reported OpenAI took at least a week to link the attack to its agents. <a href="https://openai.com/index/hugging-face-incident-and-the-road-ahead/">OpenAI</a> disputes parts of that.</p>
+                <p><span class="badge badge--view">My view</span> <strong>Lesson:</strong> agents need tight limits, monitoring and an incident plan.</p>
+                <button class="case__btn" type="button">Close</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <div class="case__inner">
+              <div class="case__face case__front">
+                <p class="case__tag">Outages · 2025</p>
+                <h3>When the cloud blinks</h3>
+                <button class="case__btn" type="button" aria-expanded="false">Open case file</button>
+              </div>
+              <div class="case__face case__back">
+                <p><span class="badge badge--fact">Fact</span> In November 2025, a settings change at Cloudflare <a href="https://blog.cloudflare.com/18-november-2025-outage/">took big parts of the web offline</a> for hours. In December, Amazon's AI coding agent Kiro deleted and recreated an environment, interrupting an AWS service for 13 hours; Amazon <a href="https://www.aboutamazon.com/news/aws/aws-service-outage-ai-bot-kiro">blamed human access settings</a>.</p>
+                <p><span class="badge badge--view">My view</span> <strong>Lesson:</strong> a few companies hold up much of the internet, so automated changes need human review.</p>
+                <button class="case__btn" type="button">Close</button>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -127,8 +196,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Made with <span aria-hidden="true">♡</span><span class="visually-hidden">love</span>, HTML and CSS by Erika Doumbova · 2026</p>
-      <p><a href="https://github.com/ErikaDoumbova/ai_project">View the code on GitHub</a></p>
+      <p>Made with <span aria-hidden="true">♡</span><span class="visually-hidden">love</span> by Erika Doumbova, 2026</p>
+      <p><a href="https://github.com/ErikaDoumbova/ai_project">Code on GitHub</a></p>
     </div>
   </footer>
 </body>
