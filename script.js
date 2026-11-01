@@ -72,13 +72,17 @@ document.querySelectorAll(".cards, .cases, .compare").forEach((group) => {
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+      // Reveal once 18% is on screen, or straight away if it is peeking in from the top
+      // (after a reload or a jump to a section, the page can open already scrolled past it).
+      const enough = entry.intersectionRatio >= 0.18;
+      const fromAbove = entry.isIntersecting && entry.boundingClientRect.top < 0;
+      if (!enough && !fromAbove) return;
       entry.target.classList.add("is-visible");
       if (entry.target.matches(".chart")) countUp(entry.target);
       observer.unobserve(entry.target);
     });
   },
-  { threshold: 0.18 }
+  { threshold: [0, 0.18] }
 );
 
 document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
