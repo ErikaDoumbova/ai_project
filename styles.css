@@ -865,3 +865,80 @@ strong {
     color: #000;
   }
 }
+
+/* =========================================================
+   5. Animations + interactions
+   (the .js class is added in <head>, so nothing is hidden
+   for people browsing without JavaScript)
+   ========================================================= */
+
+/* ---------- Hero ---------- */
+@keyframes shimmer {
+  to { background-position: 300% 0; }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(8deg); }
+}
+
+@keyframes blob {
+  0%, 100% { border-radius: 50% 50% 46% 54% / 55% 45% 55% 45%; transform: translate(0, 0) scale(1); }
+  33% { border-radius: 38% 62% 60% 40% / 45% 58% 42% 55%; transform: translate(18px, -14px) scale(1.06); }
+  66% { border-radius: 60% 40% 38% 62% / 52% 40% 60% 48%; transform: translate(-12px, 10px) scale(0.96); }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero__title em {
+  animation: shimmer 8s linear infinite;
+}
+
+.blob {
+  animation: blob 14s ease-in-out infinite;
+}
+
+.blob--2 { animation-delay: -4s; animation-duration: 18s; }
+.blob--3 { animation-delay: -9s; animation-duration: 12s; }
+
+.float {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.float--2 { animation-delay: -1.5s; animation-duration: 7s; }
+.float--3 { animation-delay: -3s; animation-duration: 8s; }
+.float--4 { animation-delay: -2s; animation-duration: 5s; }
+.float--5 { animation-delay: -4s; animation-duration: 9s; }
+
+.hero__content > * {
+  animation: rise-in 0.9s cubic-bezier(.2, .8, .2, 1) both;
+}
+
+.hero__content > :nth-child(2) { animation-delay: 0.12s; }
+.hero__content > :nth-child(3) { animation-delay: 0.24s; }
+.hero__content > :nth-child(4) { animation-delay: 0.36s; }
+.hero__content > :nth-child(5) { animation-delay: 0.48s; }
+
+/* ---------- Respect "reduce motion" ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
