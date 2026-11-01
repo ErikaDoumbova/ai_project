@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="t d">
+  <title id="t">How an AI model learns</title>
+  <desc id="d">A loop of four steps: data, training, model, output. People check the output and feed corrections back into the data.</desc>
+  <style>
+    .node { fill: #ffffff; stroke: #ffafcc; stroke-width: 3; }
+    .num { fill: #c2185b; }
+    .num-text { fill: #ffffff; font: 800 20px "Nunito", system-ui, sans-serif; text-anchor: middle; }
+    .title { fill: #9d174d; font: 700 27px "Playfair Display", Georgia, serif; }
+    .sub { fill: #6b3a57; font: 600 18px "Nunito", system-ui, sans-serif; }
+    .arrow { stroke: #ff8fb8; stroke-width: 4; fill: none; stroke-linecap: round; stroke-dasharray: 2 10; }
+    .head { fill: #ff8fb8; }
+    .dot { fill: #c2185b; }
+    .center { fill: #9d174d; font: 600 24px "Dancing Script", cursive; text-anchor: middle; }
+    @media (prefers-color-scheme: dark) {
+      .node { fill: #2c1626; stroke: #ff8fb8; }
+      .title { fill: #ffd1e3; }
+      .sub { fill: #f3c2d8; }
+      .num { fill: #ff8fb8; }
+      .num-text { fill: #1f0f1a; }
+      .dot { fill: #ff8fb8; }
+      .center { fill: #ffd1e3; }
+    }
+    @media (prefers-reduced-motion: reduce) { .dot { display: none; } }
+  </style>
+
+  <!-- arrows -->
+  <path class="arrow" d="M268 95 H330"/>
+  <path class="head" d="M336 95 l-12 -8 v16 z"/>
+  <path class="arrow" d="M455 160 V258"/>
+  <path class="head" d="M455 264 l-8 -12 h16 z"/>
+  <path class="arrow" d="M332 325 H270"/>
+  <path class="head" d="M264 325 l12 -8 v16 z"/>
+  <path class="arrow" d="M145 260 V162"/>
+  <path class="head" d="M145 156 l-8 12 h16 z"/>
+
+  <!-- travelling dots (drawn under the boxes, so they only show on the arrows) -->
+  <circle class="dot" r="6">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M268 95 H336 L455 160 V264 L332 325 H264 L145 260 V156 Z"/>
+  </circle>
+  <circle class="dot" r="6" opacity=".6">
+    <animateMotion dur="6s" begin="-3s" repeatCount="indefinite" path="M268 95 H336 L455 160 V264 L332 325 H264 L145 260 V156 Z"/>
+  </circle>
+
+  <!-- 1 data -->
+  <rect class="node" x="30" y="35" width="238" height="120" rx="28"/>
+  <circle class="num" cx="62" cy="68" r="17"/><text class="num-text" x="62" y="75">1</text>
+  <text class="title" x="90" y="78">Data</text>
+  <text class="sub" x="52" y="112">examples: text,</text>
+  <text class="sub" x="52" y="135">images, sounds</text>
+
+  <!-- 2 training -->
+  <rect class="node" x="336" y="35" width="238" height="120" rx="28"/>
+  <circle class="num" cx="368" cy="68" r="17"/><text class="num-text" x="368" y="75">2</text>
+  <text class="title" x="396" y="78">Training</text>
+  <text class="sub" x="358" y="112">it tweaks itself</text>
+  <text class="sub" x="358" y="135">to spot patterns</text>
+
+  <!-- 3 model -->
+  <rect class="node" x="336" y="265" width="238" height="120" rx="28"/>
+  <circle class="num" cx="368" cy="298" r="17"/><text class="num-text" x="368" y="305">3</text>
+  <text class="title" x="396" y="308">Model</text>
+  <text class="sub" x="358" y="342">the learned</text>
+  <text class="sub" x="358" y="365">patterns, saved</text>
+
+  <!-- 4 output -->
+  <rect class="node" x="30" y="265" width="238" height="120" rx="28"/>
+  <circle class="num" cx="62" cy="298" r="17"/><text class="num-text" x="62" y="305">4</text>
+  <text class="title" x="90" y="308">Output</text>
+  <text class="sub" x="52" y="342">a guess: a word,</text>
+  <text class="sub" x="52" y="365">a label, an image</text>
+
+  <!-- centre note -->
+  <text class="center" x="300" y="205">people check</text>
+  <text class="center" x="300" y="233">&amp; correct it ♡</text>
+</svg>

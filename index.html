@@ -35,7 +35,13 @@
       <div class="container hero__content">
         <p class="eyebrow">A student explainer · November 2026</p>
         <h1 class="hero__title" id="hero-title">AI, <em>explained softly</em></h1>
-        <p class="hero__lede"></p>
+        <p class="hero__lede">Artificial intelligence is in our phones, classrooms and feeds, yet it is usually explained as either magic or doom. This page tries something softer: plain words, real examples and honest uncertainty.</p>
+        <p class="legend" aria-label="How to read the labels on this page">
+          <span><span class="badge badge--fact">Fact</span> checked against a linked source</span>
+          <span><span class="badge badge--view">My view</span> my interpretation</span>
+          <span><span class="badge badge--pred">Prediction</span> what might happen</span>
+        </p>
+        <a class="btn" href="#what">Start reading <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
@@ -43,6 +49,21 @@
       <div class="container">
         <p class="kicker">01 · the basics</p>
         <h2 id="what-title">What is AI, really?</h2>
+        <div class="split">
+          <div class="prose reveal">
+            <p class="lead">AI is software that <strong>learns from examples</strong> instead of only following rules a programmer wrote by hand.</p>
+            <p><span class="badge badge--fact">Fact</span> The <a href="https://oecd.ai/en/inside-artificial-intelligence">OECD</a> describes an AI system as a machine that works out, from the input it receives, how to produce outputs such as predictions, content, recommendations or decisions.</p>
+            <p>In practice: show a computer millions of examples, let it adjust itself until it spots the patterns, then ask it to guess. A chatbot guesses a likely next word. An <a href="https://www.washingtonpost.com/technology/interactive/2022/ai-image-generator/">image generator</a> starts from random noise and cleans it up, step by step, until it matches your prompt.</p>
+            <p><span class="badge badge--fact">Fact</span> Those examples come from us. Google's C4 dataset, used to train language models, was built from about <a href="https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/">15 million websites</a>, from Wikipedia to personal blogs.</p>
+            <div class="callout">
+              <p><span class="badge badge--view">My view</span> AI does not “understand” the world the way people do. It is brilliant at patterns, which is exactly why it can sound confident and still be wrong.</p>
+            </div>
+          </div>
+          <figure class="diagram reveal">
+            <img src="assets/how-ai-learns.svg" width="600" height="420" alt="Diagram of a loop with four steps. 1, Data: examples such as text, images and sounds. 2, Training: the computer tweaks itself to spot patterns. 3, Model: the learned patterns, saved. 4, Output: a guess such as a word, a label or an image. In the middle, people check and correct the output, which feeds back into the data.">
+            <figcaption>How an AI model learns, drawn for this page.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -50,6 +71,28 @@
       <div class="container">
         <p class="kicker">02 · the good</p>
         <h2 id="helps-title">Where AI helps</h2>
+        <ul class="cards" role="list">
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">🧬</span>
+            <h3>Science</h3>
+            <p><span class="badge badge--fact">Fact</span> DeepMind's <a href="https://alphafold.ebi.ac.uk/">AlphaFold</a> has predicted the 3D shapes of over 200 million proteins, helping researchers study disease and design medicines. The work shared the <a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">2024 Nobel Prize in Chemistry</a>.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">📚</span>
+            <h3>Studying</h3>
+            <p><span class="badge badge--view">My view</span> I use AI to quiz myself before exams, get a second explanation of a hard concept and spot gaps in my notes. It is a great study buddy and a bad ghostwriter.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">💼</span>
+            <h3>Work</h3>
+            <p><span class="badge badge--view">My view</span> Drafting emails, summarising long reports, translating and writing code all get faster, as long as a person checks the result before it goes out.</p>
+          </li>
+          <li class="card reveal">
+            <span class="card__icon" aria-hidden="true">🦻</span>
+            <h3>Accessibility</h3>
+            <p><span class="badge badge--view">My view</span> Live captions, voice control and automatic image descriptions can make technology easier to use for people who are deaf, blind or have limited mobility.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
