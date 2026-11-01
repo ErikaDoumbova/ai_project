@@ -74,7 +74,10 @@
             </div>
           </div>
           <figure class="diagram reveal">
-            <img src="assets/how-ai-learns.svg" width="600" height="420" alt="Diagram of a loop with four steps. 1, Data: examples such as text, images and sounds. 2, Training: the computer tweaks itself to spot patterns. 3, Model: the learned patterns, saved. 4, Output: a guess such as a word, a label or an image. In the middle, people check and correct the output, which feeds back into the data.">
+            <picture>
+              <source media="(max-width: 560px)" srcset="assets/how-ai-learns-mobile.svg" width="360" height="612">
+              <img src="assets/how-ai-learns.svg" width="600" height="420" alt="Diagram of a loop with four steps. 1, Data: examples such as text, images and sounds. 2, Training: the computer tweaks itself to spot patterns. 3, Model: the learned patterns, saved. 4, Output: a guess such as a word, a label or an image. In the middle, people check and correct the output, which feeds back into the data.">
+            </picture>
             <figcaption>How an AI model learns.</figcaption>
           </figure>
         </div>
@@ -253,6 +256,7 @@
           <p>The page follows a reader's questions, from “what is it?” to “what next?”. Case studies sit on flip cards to keep the page short.</p>
           <p>To make AI feel approachable, not scary, I chose a pink palette, rounded cards, Playfair Display and Nunito. I checked colour contrast, and dark mode switches on automatically.</p>
           <p>The code is plain HTML, CSS and a little JavaScript. Semantic elements, a skip link and focus outlines help keyboard users, and the diagram has alt text. Animations stop for anyone who prefers reduced motion.</p>
+          <p>Testing on a phone showed the diagram's labels were too small, so I drew a taller mobile version.</p>
           <p><span class="badge badge--view">AI use</span> I built this site with Claude, an AI assistant, which drafted much of the text and code from my brief. Every factual claim was checked against its source, and claims that could not be confirmed were removed.</p>
         </div>
         <ul class="toolbox" role="list" aria-label="Tools used">
