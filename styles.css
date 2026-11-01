@@ -753,3 +753,116 @@ strong {
 .site-footer a:hover {
   color: var(--pink-200);
 }
+
+/* =========================================================
+   4. Responsive, dark mode, print
+   ========================================================= */
+@media (max-width: 860px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .nav__menu {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav__menu::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .nav__menu {
+    width: 100%;
+  }
+
+  .nav__menu a {
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart__row {
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+  }
+
+  .chart__value {
+    grid-column: 1;
+  }
+
+  .callout {
+    padding-left: 24px;
+    padding-top: 52px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1f0f1a;
+    --bg-tint: #2a1423;
+    --surface: #2f1829;
+    --ink: #ffe8f1;
+    --ink-soft: #f3c2d8;
+    --accent: #ff8fb8;
+    --accent-strong: #ffc2da;
+    --on-accent: #1f0f1a;
+    --pink-200: #5a2346;
+    --pink-300: #8a3466;
+    --pink-400: #ff8fb8;
+    --lilac: #3b2452;
+    --lilac-ink: #e2ccff;
+    --mint: #173d2b;
+    --mint-ink: #b9f2d3;
+    --peach: #4a2614;
+    --peach-ink: #ffd2b3;
+    --border: #4d2440;
+    --shadow: 0 14px 34px -16px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 24px 50px -20px rgba(0, 0, 0, 0.75);
+  }
+
+  .site-header {
+    background: rgba(31, 15, 26, 0.82);
+  }
+
+  .legend {
+    background: rgba(47, 24, 41, 0.75);
+  }
+
+  .compare__col--bright,
+  .compare__col--stormy {
+    border-color: var(--border);
+  }
+
+  .site-footer {
+    background: #140910;
+    color: var(--ink-soft);
+  }
+
+  .site-footer a {
+    color: var(--accent);
+  }
+}
+
+@media print {
+  .site-header,
+  .hero__decor,
+  .case__btn {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
