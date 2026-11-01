@@ -4,6 +4,30 @@
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = window.matchMedia("(pointer: fine)").matches;
 
+/* ---------- Mobile menu ---------- */
+const navToggle = document.querySelector(".nav__toggle");
+const navMenu = document.getElementById("nav-menu");
+
+function setMenu(open) {
+  navToggle.setAttribute("aria-expanded", String(open));
+  navMenu.classList.toggle("is-open", open);
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    setMenu(navToggle.getAttribute("aria-expanded") !== "true");
+  });
+  navMenu.addEventListener("click", (event) => {
+    if (event.target.closest("a")) setMenu(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navMenu.classList.contains("is-open")) {
+      setMenu(false);
+      navToggle.focus();
+    }
+  });
+}
+
 /* ---------- Scroll progress + back-to-top ---------- */
 const progress = document.querySelector(".progress");
 const toTop = document.querySelector(".to-top");
@@ -96,3 +120,54 @@ document.querySelectorAll(".case").forEach((card) => {
   openBtn.addEventListener("click", () => flip(true));
   closeBtn.addEventListener("click", () => flip(false));
 });
+
+/* ---------- Sparkle trail (mouse only, never with reduced motion) ---------- */
+const sparkleShapes = ["✦", "♡", "✧", "·"];
+let lastSparkle = 0;
+
+if (finePointer && !reduceMotion) {
+  window.addEventListener("pointermove", (event) => {
+    const now = performance.now();
+    if (now - lastSparkle < 45) return;
+    lastSparkle = now;
+
+    const sparkle = document.createElement("span");
+    sparkle.className = "sparkle";
+    sparkle.setAttribute("aria-hidden", "true");
+    sparkle.textContent = sparkleShapes[Math.floor(Math.random() * sparkleShapes.length)];
+    sparkle.style.left = `${event.clientX}px`;
+    sparkle.style.top = `${event.clientY}px`;
+    sparkle.style.setProperty("--drift", `${(Math.random() - 0.5) * 40}px`);
+    document.body.appendChild(sparkle);
+    sparkle.addEventListener("animationend", () => sparkle.remove());
+  });
+}
+
+/* ---------- Heart burst on buttons ---------- */
+function heartBurst(x, y) {
+  for (let i = 0; i < 10; i++) {
+    const heart = document.createElement("span");
+    const angle = (Math.PI * 2 * i) / 10;
+    const distance = 50 + Math.random() * 40;
+    heart.className = "burst-heart";
+    heart.setAttribute("aria-hidden", "true");
+    heart.textContent = "♡";
+    heart.style.left = `${x}px`;
+    heart.style.top = `${y}px`;
+    heart.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
+    heart.style.setProperty("--dy", `${Math.sin(angle) * distance}px`);
+    document.body.appendChild(heart);
+    heart.addEventListener("animationend", () => heart.remove());
+  }
+}
+
+if (!reduceMotion) {
+  document.querySelectorAll(".btn, .case__btn").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX || rect.left + rect.width / 2;
+      const y = event.clientY || rect.top + rect.height / 2;
+      heartBurst(x, y);
+    });
+  });
+}

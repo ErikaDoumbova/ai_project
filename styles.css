@@ -1006,6 +1006,133 @@ html:not(.js) .case__btn {
   transform: rotateY(180deg);
 }
 
+/* ---------- Sparkles + heart bursts ---------- */
+.sparkle,
+.burst-heart {
+  position: fixed;
+  z-index: 90;
+  pointer-events: none;
+  color: var(--pink-400);
+  font-size: 14px;
+  line-height: 1;
+  translate: -50% -50%;
+}
+
+.sparkle {
+  animation: sparkle 0.9s ease-out forwards;
+}
+
+.burst-heart {
+  color: var(--accent);
+  font-size: 18px;
+  animation: burst 0.8s ease-out forwards;
+}
+
+@keyframes sparkle {
+  from { opacity: 1; transform: translate(0, 0) scale(1) rotate(0); }
+  to { opacity: 0; transform: translate(var(--drift), 26px) scale(0.2) rotate(120deg); }
+}
+
+@keyframes burst {
+  from { opacity: 1; transform: translate(0, 0) scale(0.6); }
+  to { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(1.2); }
+}
+
+/* ---------- Back to top ---------- */
+.to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-400), var(--accent));
+  color: var(--on-accent);
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.to-top.is-shown,
+.to-top:focus-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.to-top:hover {
+  color: var(--on-accent);
+  animation: heartbeat 0.9s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  20% { transform: scale(1.14); }
+  40% { transform: scale(0.98); }
+  60% { transform: scale(1.08); }
+}
+
+/* ---------- Mobile menu (only when JavaScript can open it) ---------- */
+@media (max-width: 560px) {
+  .js .nav {
+    position: relative;
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+
+  .js .nav__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 2px solid var(--pink-300);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--accent-strong);
+    font: 800 0.95rem var(--font-body);
+    cursor: pointer;
+  }
+
+  .js .nav__toggle[aria-expanded="true"] {
+    background: var(--pink-200);
+  }
+
+  .js .nav__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(240px, 100%);
+    flex-direction: column;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.97);
+    transform-origin: top right;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+
+  .js .nav__menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .js .nav__menu a {
+    padding: 10px 14px;
+  }
+}
+
 /* ---------- Respect "reduce motion" ---------- */
 @media (prefers-reduced-motion: reduce) {
   *,
