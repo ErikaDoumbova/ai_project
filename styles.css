@@ -666,6 +666,10 @@ strong {
   border: 1px solid #d6c3ee;
 }
 
+.compare__col h3 span {
+  margin-right: 0.3em;
+}
+
 .compare__col ul {
   margin: 0;
   padding-left: 1.2em;
@@ -803,6 +807,10 @@ strong {
   .callout {
     padding-left: 24px;
     padding-top: 52px;
+  }
+
+  .float--4 {
+    display: none;
   }
 }
 
